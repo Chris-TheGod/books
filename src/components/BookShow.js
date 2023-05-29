@@ -14,7 +14,7 @@ export const BookShow = ({ book, onDelete }) => {
 
   let content = <h3>{book.title}</h3>;
   if (showEdit) {
-    content = <BookEdiit />;
+    content = <BookEdiit book={book} />;
   }
 
   return (
