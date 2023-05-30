@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const BookEdiit = ({ book, onEdit }) => {
+export const BookEdiit = ({ book, onEdit, onSubmit }) => {
   const [title, setTitle] = useState("");
 
   const handleChange = (event) => {
@@ -11,6 +11,7 @@ export const BookEdiit = ({ book, onEdit }) => {
     e.preventDefault();
 
     onEdit(book.id, title);
+    onSubmit();
   };
 
   return (
