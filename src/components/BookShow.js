@@ -8,8 +8,9 @@ export const BookShow = ({ book, onDelete, onEdit }) => {
     setShowEdit(!showEdit);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (id, newTitle) => {
     setShowEdit(false);
+    onEdit(id, newTitle);
   };
 
   const handleDeleteClick = () => {
@@ -18,7 +19,7 @@ export const BookShow = ({ book, onDelete, onEdit }) => {
 
   let content = <h3>{book.title}</h3>;
   if (showEdit) {
-    content = <BookEdiit onSubmit={handleSubmit} onEdit={onEdit} book={book} />;
+    content = <BookEdiit onSubmit={handleSubmit} book={book} />;
   }
 
   return (
